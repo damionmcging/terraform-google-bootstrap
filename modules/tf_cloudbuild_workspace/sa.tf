@@ -84,10 +84,10 @@ resource "google_service_account_iam_member" "cb_service_agent_impersonate" {
 }
 
 # allow CB SA to view source code if csr
-resource "google_sourcerepo_repository_iam_member" "member" {
-  count      = local.is_source_repo ? 1 : 0
-  project    = local.source_repo_project
-  repository = local.source_repo_name
-  role       = "roles/viewer"
-  member     = "serviceAccount:${local.cloudbuild_sa_email}"
-}
+#resource "google_sourcerepo_repository_iam_member" "member" {
+#  count      = local.is_source_repo ? 1 : 0
+#  project    = local.source_repo_project
+#  repository = local.source_repo_name
+#  role       = "roles/viewer"
+#  member     = "serviceAccount:${local.cloudbuild_sa_email}"
+#}
